@@ -8,6 +8,7 @@
             color: #333333;
             font-family: Arial, sans-serif;
             margin: 0;
+            overflow-x: hidden;
         }
         #accueil{
             background-color: #f5f5f5;
@@ -25,9 +26,6 @@
         @media (max-width: 600px){
             .projects{
                 grid-template-columns: 1fr;
-            }
-            .contact-buttons{
-                justify-content: center;
             }
             #accueil .btn{
                 display: block;
@@ -59,6 +57,7 @@
             display: flex;
             gap: 20px;
             padding: 0;
+            flex-wrap: wrap;
         }
         nav a{
             text-decoration: none;
@@ -72,7 +71,6 @@
         }
         h1 {
             margin: 40px;
-            /*typographie*/
             font-size: 32px;
         }
         h2{
@@ -83,13 +81,13 @@
         img{
             margin: 30px;
             width: 150px;
+            max-width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 50%;
         }
         p {
             margin: 20px;
-            /*typographie*/
             font-size: 16px;
             line-height: 1.6;
             text-align: left;
@@ -98,27 +96,31 @@
         .btn {
             margin: 5px;
             padding: 10px 20px;
-            background-color: #333333;
-            background-color: #222;
+            background-color: var(--primary);
             transition: 0.3s;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             width: fit-content;
-            white-space: nowrap;
+            white-space: normal;
         }
         .btn:hover{
-            background-color: #555;
-            background-color: #000;
+            background-color: #1d4ed8;
             transform: scale(1.05);
         }
         .btn:first-of-type{
             background-color: #000;
         }
+        .btn-primary{
+            background-color: #000;
+        }
         .container {
             max-width: 600px;
-            width: 100%;
             margin: 100px auto;
+            padding: 0 20px;
+        }
+        .projets{
+            width: 100%;
         }
         .project{
             border: 1px solid #ddd;
@@ -142,9 +144,12 @@
             align-items: center;
             gap: 10px;
         }
+        :root{
+            --primary: #2563eb;
+        }
         section{
             margin-top: 50px;
-            padding: 80px 20px;
+            padding: 80px 0px;
         }
         html{
             scroll-behavior: smooth;
@@ -171,7 +176,7 @@
                 <p>Disponible pour collaborer sur des projets web simples, utiles et automatisés.</p>
                 <img src="img/BryanBeto.Dev.jpg" alt="Photo du développeur">
                 <p>Je développe des solutions web pratiques en me formant de manière autonome.</p>
-                <a class="btn" href="#contact">Collaborer avec moi</a>
+                <a class="btn btn-primary" href="#contact">Collaborer avec moi</a>
                 <a class="btn" href="#projets">Voir mes projets</a>
             </section>
 
@@ -183,6 +188,8 @@
                     <div class="project">
                         <h3>Todo App (gestion de tâches)</h3>
                         <p>Application permettant de créer, modifier et suivre des tâches</p>
+                        <p>Technologie : HTML, CSS</p>
+                        <p>Objectif : organiser les tâches efficacement</p>
                         <a href="#" class="btn">Voir</a>
                     </div>
 
